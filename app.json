@@ -13,7 +13,14 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "audio",
+          "fetch",
+          "processing"
+        ]
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -21,8 +28,40 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "RECEIVE_BOOT_COMPLETED",
+        "VIBRATE",
+        "POST_NOTIFICATIONS",
+        "SCHEDULE_EXACT_ALARM",
+        "USE_EXACT_ALARM",
+        "REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"
+      ],
+      "package": "com.anonymous.appthatmakesslacknotificationsound",
+      "googleServicesFile": null
     },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#4A154B",
+          "sounds": [
+            "./assets/slack_notification.mp3"
+          ]
+        }
+      ],
+      [
+        "expo-task-manager",
+        {
+          "backgroundMode": [
+            "audio",
+            "location",
+            "fetch"
+          ]
+        }
+      ]
+    ],
     "web": {
       "favicon": "./assets/favicon.png"
     }
